@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat App - Features and Code</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            color: #333;
+            overflow-y: scroll; /* Hide scrollbar */
+            transition: overflow 0.5s ease; /* Smooth transition for overflow */
+            font-size: 18px; /* Default font size */
+        }
+
+        /* Hide scrollbar for Webkit browsers */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            font-size: 28px; /* Larger header font size */
+        }
+
+        /* Section styles */
+        section {
+            margin: 30px 0;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+            cursor: pointer; /* Indicate that sections are clickable */
+        }
+
+        #features, #why-not-whatsapp, #code-explanation {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 20px; /* Increased font size for sections */
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 20px; /* Larger footer font size */
+        }
+
+        /* Hover effects */
+        section:hover {
+            background-color: #e7f5ff; /* Light blue background on hover */
+            transform: scale(1.02); /* Slightly increase size */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                font-size: 16px; /* Adjust font size for smaller screens */
+            }
+
+            header {
+                font-size: 24px; /* Smaller header font size for mobile */
+            }
+
+            section {
+                margin: 15px 0;
+                padding: 20px; /* Adjust padding for smaller sections */
+                font-size: 18px; /* Smaller font size for mobile sections */
+            }
+
+            footer {
+                font-size: 16px; /* Smaller footer font size for mobile */
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 400px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            #features h2, #why-not-whatsapp h2, #code-explanation h2 {
+                font-size: 22px; /* Increased size for headings in mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Welcome to My Chat Application!</h1>
+        <p>Discover the unique features of our chat app and why it's better than WhatsApp.</p>
+    </header>
+
+    <!-- Features section -->
+    <section id="features">
+        <h2>Features of Our Chat Application</h2>
+        <ul>
+            <li>Real-time messaging with instant notifications</li>
+            <li>Upload images and videos</li>
+            <li>Responsive design for all devices</li>
+            <li>Custom profile options with profile pictures</li>
+            <li>Lightweight and fast user interface</li>
+        </ul>
+    </section>
+
+    <!-- Why not WhatsApp section -->
+    <section id="why-not-whatsapp">
+        <h2>Why Use Our Chat App Instead of WhatsApp?</h2>
+        <ul>
+            <li>No data tracking or sharing with third parties</li>
+            <li>Fully customizable chat interface</li>
+            <li>Focus on security and privacy</li>
+            <li>Lightweight app that doesn't hog your device's memory</li>
+        </ul>
+    </section>
+
+    <!-- Code Explanation Section -->
+    <section id="code-explanation">
+        <h2>How We Built This App (Code Explanation)</h2>
+        <p>This application is built using HTML for structure, CSS for styling, and JavaScript for functionality. Below is an overview of the code:</p>
+        
+        <h3>HTML Structure</h3>
+        <p>The chat interface is divided into sections like the message area, profile, and text input box. The <code>&lt;textarea&gt;</code> tag allows users to input their messages, while buttons are used to trigger actions like sending messages or uploading images.</p>
+
+        <h3>CSS Styling</h3>
+        <p>The CSS uses Flexbox to create a responsive design that works on mobile and desktop devices. We also used media queries to adjust the layout for different screen sizes.</p>
+
+        <h3>JavaScript for Real-time Communication</h3>
+        <p>Using the Socket.IO library, we implemented real-time messaging that ensures messages are sent and received instantly. This is similar to how WhatsApp works, but with a simpler and more lightweight approach.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <footer>
+        <h2>Contact Us</h2>
+        <p>For more information or feedback, email us at: harsha.cpr001@gmail.com</p>
+    </footer>
+
+    <script>
+        // Function to close the centered block on clicking outside
+        document.addEventListener('click', function(event) {
+            const centeredBlock = document.querySelector('.centered');
+            if (centeredBlock && !centeredBlock.contains(event.target)) {
+                centeredBlock.classList.remove('centered');
+                document.body.style.overflow = 'auto'; // Restore scrollbar
+            }
+        });
+
+        // Show an alert when the page is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            alert("Welcome to the My Chat Application!");
+        });
+    </script>
+</body>
+</html>
